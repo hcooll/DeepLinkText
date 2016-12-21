@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+// 两秒后模拟点击
+<!--setTimeout(function() {-->
+	<!--// IE-->
+	<!--if(document.all) {-->
+		<!--document.getElementById("clickMe").click();-->
+	<!--}-->
+	<!--// 其它浏览器-->
+	<!--else {-->
+		<!--var e = document.createEvent("MouseEvents");-->
+		<!--e.initEvent("click", true, true);-->
+		<!--document.getElementById("clickMe").dispatchEvent(e);-->
+	<!--}-->
+<!--}, 2000);-->
+</script>
+
 <body>
+
+<a href="intent://scan/#Intent;scheme=kitty;package=com.kitty.android" target="_blank" id="clickMe" onclick="alert('clicked');">link</a>
+<br>
 <!-- String url_ = "kitty://com.kitty/share?title=nihao&image=http://asdf&share_url=http://asdfa"; -->
 
 <a href="kitty://com.kitty/share?title=test!!&image=&share_url=" target="_blank">DeepLink测试!(share)</a>
 <br>
-<a href="kitty://com.kitty/live?live_id=1875422" target="_blank">DeepLink测试!(live)</a>
+<a href="kitty://com.kitty/live?live_id=1883117" target="_blank">DeepLink测试!(live)，他人直播间</a>
 <br>
-<a href="kitty://com.kitty/start_live?title=#test&res_id=1&res_type=45" target="_blank">DeepLink测试!(start live)</a>
+<a href="kitty://com.kitty/start_live?title=#test&res_id=1&res_type=45" target="_blank">DeepLink测试!(start live),开播</a>
 <br>
-<a href="kitty://com.kitty/user?user_id=1398069" target="_blank">DeepLink测试!(user)</a>
+<a href="kitty://com.kitty/user?user_id=1398069" target="_blank">DeepLink测试!(user)他人信息界面</a>
+<br>
+<a href="kitty://com.kitty/dynamic_user?user_id=975863" target="_blank">DeepLink测试!(dynamic_user),如果用户在直播则跳转直播间</a>
 <br>
 <b>===========================</b>
 <br>
@@ -35,17 +57,13 @@
 <br>
 <a href="kitty://com.kitty/pay?type=4" target="_blank">DeepLink测试!(PayPal)</a>
 <br>
-<a href="kitty://com.kitty/pay?type=5" target="_blank">DeepLink测试!(False)</a>
+<a href="kitty://com.kitty/pay?" target="_blank">DeepLink测试!(False)</a>
 <br>
 <b>===========================</b>
 <br>
-<a href="kitty://com.kitty/line/confirm/product" target="_blank">DeepLink测试!(LINE_Product_confirm)</a>
+<a href="kitty://com.kitty.pay/line/confirm" target="_blank">DeepLink测试!(LINE_confirm)</a>
 <br>
-<a href="kitty://com.kitty/line/cancel/product" target="_blank">DeepLink测试!(LINE_Product_cancel)</a>
-<br>
-<a href="kitty://com.kitty/line/confirm/watch" target="_blank">DeepLink测试!(LINE_Watch_confirm)</a>
-<br>
-<a href="kitty://com.kitty/line/cancel/watch" target="_blank">DeepLink测试!(LINE_Watch_cancel)</a>
+<a href="kitty://com.kitty.pay/line/cancel" target="_blank">DeepLink测试!(LINE_cancel)</a>
 <br>
 <b>===========================</b>
 <br>

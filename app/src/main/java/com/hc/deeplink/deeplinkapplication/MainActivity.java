@@ -1,10 +1,9 @@
 package com.hc.deeplink.deeplinkapplication;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,8 +18,15 @@ public class MainActivity extends AppCompatActivity {
     {
         WebView webview = new WebView(this);
 //        webview.setWebViewClient(new WebViewClient());
+//        webview.setWebViewClient(new WebViewClient() {
+//            @Override
+//            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+//                return false;
+//            }
+//        });
         WebSettings wSet = webview.getSettings();
         wSet.setJavaScriptEnabled(true);
+        wSet.setJavaScriptCanOpenWindowsAutomatically(true);
         webview.loadUrl("file:///android_asset/deeplink_test.html");
         setContentView(webview);
     }
