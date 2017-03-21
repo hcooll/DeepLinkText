@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lucky Bag</title>
+    <script>
+        var ua = navigator.userAgent.toLowerCase();
+        var lang = 'en';
+        ua.replace(/lang=(\w*)/, function(s, value){lang = value});
+        if(lang == 'es') {location.href="./luckybag_es.html";}else if(lang == 'id') {location.href="./luckybag_id.html";}else if(lang == 'th') {location.href = "./luckybag_th.html";}
+    </script>
+    <style type="text/css">
+    html,body {font-family: "Roboto", Droid Sans, "微软雅黑", Arial,sans-serif;margin: 0;padding: 0}
+    h1.title {color: #0baa8a;text-align: center}
+    h5.subhead,ul li h5 {color: #0baa8a}
+    ul {list-style: none;padding: 0}
+    ul li {margin: 0}
+    p {font-size: 14px;margin: 0;color: #333}
+    p.section {margin-top: 1rem}
+    p.info {margin-top: .5rem}
+    section.privacy {padding: 0 1rem 1rem}
+    </style>
+</head>
+<body style="display: none" id="hideAll">
+<section class="privacy">
+    <ul>
+        <li>
+            <h5>What is Lucky Bag?</h5>
+            <p class="info">Lucky Bag contains a bundle of rubies. Anyone who sees a Lucky Bag can open it and will get a random amount of rubies. You can send Lucky Bag when your favorite VJ is live and anyone in the room can open it.</p>
+        </li>
+        <li>
+            <h5>How to send Lucky Bag?</h5>
+            <p class="info">1. Tap the Lucky Bag icon at the bottom of the screen.</p>
+            <p class="info">2. Choose the total amount of rubies and how many parts you want them to be divided.</p>
+            <p class="info">3. Make sure you have sufficient rubies and tap SEND button.</p>
+        </li>
+        <li>
+            <h5>How to get rubies in the Lucky Bag?</h5>
+            <p class="info">Tap to open the Lucky Bag once you see it and then you may get a random amount of rubies. Of course sometimes you may get none in bad luck. Notice that VJ will get Moons instead of Rubies.</p>
+        </li>
+        <li>
+            <h5>What if there are still some remaining rubies in one lucky bag when the live come to an end?</h5>
+            <p class="info">Don't worry. They will be returned to the one who sent them.</p>
+        </li>
+    </ul>
+    <script>
+        var uagent = navigator.userAgent.toLowerCase();
+        if (/kittylive/i.test(uagent)) {
+            document.getElementById("title").style.display = "none"
+        }
+        document.getElementById("hideAll").style.display = "block";
+        </script>
+</body>
+</html>

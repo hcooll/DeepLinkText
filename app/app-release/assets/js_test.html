@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find Ur Destiny</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;}
+        html,
+        body,
+        img {
+            width: 100%;
+        }
+
+        body {
+
+            font-size: 0;
+            background-color: #fff;
+            font-size: 0;
+        }
+        .wrap_div{
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+        .wrap_div .image_div{
+            position: absolute;
+            top: 0;
+        }
+        .share_div{
+            width: 100%;
+            height: 3rem;
+            background: red;
+            line-height: 3rem;
+            text-align: center;
+            font-size: 2rem;
+            border: 1px solid #000
+        }
+
+        a{
+            position: absolute;
+            font-size: 1rem;
+            font-family: Arial, sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+            text-align: center;
+            background-color: #ffcc00;
+            font-size: 1.1rem;
+            border-radius: 0.2rem;
+            font-weight: bold;
+            color: #fff;
+            padding: 0.2% 3%;
+            font-style: italic;
+            white-space: nowrap;
+            border-radius: 4px;
+            width: 5rem;
+            height: 1.6rem;
+            line-height: 1.8rem;
+        }
+        .wrap_div>a:nth-child(2){
+            margin-top: 101%;
+            margin-left: 9.7222%;
+            background-color: #b057d2;
+            box-shadow: 0 -0.2rem 0.2rem #bb63e5 inset,
+                        -0.2rem 0 0.2rem #b55ddb inset,
+                        0 0.2rem 0.2rem #7d427f inset,
+                        0.2rem 0 0.2rem #87468f inset;
+
+        }
+        .wrap_div>a:nth-child(3){
+            margin-top: 108.88889%;
+            margin-left: 40.138889%;
+            background-color: #121e28;
+            box-shadow: 0 -0.2rem 0.2rem #352f86 inset,
+                        -0.2rem 0 0.2rem #222651 inset,
+                        0 0.2rem 0.2rem #0d1718 inset,
+                        0.2rem 0 0.2rem #0e181c inset;
+        }
+
+       .wrap_div>a:nth-child(4){
+            margin-top: 100.5556%;
+            margin-left: 68.88889%;
+            background-color: #2a9ca7;
+            box-shadow: 0 -0.2rem 0.2rem #4aa3cd inset,
+                        -0.2rem 0 0.2rem #74adbf inset,
+                        0 0.2rem 0.2rem #1e7767 inset,
+                        0.2rem 0 0.2rem #207d71 inset;
+        }
+
+
+    </style>
+    <script>
+        function setRemFontSize(baseSize, baseWidth) {
+            var baseSize = baseSize || 13,
+                baseWidth = baseWidth || 375,
+                clientWidth = document.documentElement.clientWidth;
+            document.getElementsByTagName('html')[0].style.fontSize = clientWidth * baseSize / baseWidth + 'px'
+        }
+        setRemFontSize();
+        window.addEventListener("resize", function() {
+            setRemFontSize();
+        });
+
+
+    </script>
+</head>
+
+<body ng-controller="myCtrl">
+
+<button id="foo" onclick="getAndroidShareContent()">Bar</button>
+
+<div class="share_div">share</div>
+
+<div class="wrap_div">
+    <div class="image_div">
+        <img src="http://s3-us-west-2.amazonaws.com/solomedia/upload/bd85d7b541de4d709f33eaea8256addc.jpg"
+             alt="">
+    </div>
+    <!-- DAV -->
+    <a href="javascript:;" ng-click="go(54214571)">GO ROOM</a>
+
+
+    <!-- PAN -->
+    <a href="javascript:;" ng-click="go(59708199)">GO ROOM</a>
+
+
+    <!--  PUN-->
+    <a href="javascript:;" ng-click="go(19597268)">GO ROOM</a>
+
+
+</div>
+
+<script type="text/javascript" src='/js/jquery-1.12.4.min.js'></script>
+
+<script src="js/angular.min.js"></script>
+<script>
+        $(function(){
+            $('.share_div').click(function(){
+                getAndroidShareContent()
+
+            })
+        })
+        function getAndroidShareContent() {
+            console.log('点击成功')
+        　　var shareUrl = "http://www.kitty.live/banner_20170306.html";
+        　　var imageUrl = "http://4493bz.1985t.com/uploads/allimg/150127/4-15012G52133.jpg";
+        　　var shareTitle = "这是分享标题";
+            var shareDescription="这是分享文案";
+        　　window.android.share(shareUrl,imageUrl,shareTitle,shareDescription)
+        }
+
+
+        angular.module("myApp", [])
+            .controller("myCtrl", function($scope, $http) {
+                var clicked = false;
+                var data = [54214571, 59708199, 19597268];
+                $scope.go = function(user_id) {
+                    if (clicked) return;
+                    clicked = true;
+                    setTimeout(function() {
+                        clicked = false
+                    }, 2000);
+                    location.href = 'kitty://com.kitty/dynamic_user?user_id='+user_id;
+                }
+            })
+
+
+</script>
+</body>
+
+</html>
