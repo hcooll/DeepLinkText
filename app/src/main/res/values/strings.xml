@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">DeepLinkApplication</string>
+    <string name="app_name">HC_DeepLinkApplication</string>
     <string name="title_activity_jump">JumpActivity</string>
 </resources>

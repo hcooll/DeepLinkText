@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<meta property="al:android:url" content="kitty://com.kitty/live?live_id=58501206">
+<meta property="al:android:package" content="com.kitty.android">
+<meta property="al:android:app_name" content="Kitty Live">
+<meta property="og:title" content="example page title" />
+<meta property="og:type" content="website" />
+
 <script type="text/javascript">
 // 两秒后模拟点击
 <!--setTimeout(function() {-->
@@ -35,6 +42,7 @@ function postMessage(message){
     window.webkit.messageHandlers.control.postMessage({boddsay: 'call js alert in js',hello: message})
 }
 
+
 </script>
 
 <body>
@@ -59,6 +67,12 @@ function postMessage(message){
 <a href="kitty://com.kitty/web?title=百度&url=http://www.baidu.com" target="_blank">DeepLink测试!(web),内嵌WebView</a>
 <br>
 <a href="kitty://com.kitty/replay?live_id=55563210" target="_blank">DeepLink测试!(replay),回播</a>
+<br>
+<a href="kitty://com.kitty/recommend_hot" target="_blank">DeepLink测试!(recommend_hot), 热门推荐</a>
+<br>
+<a href="kitty://com.kitty/nearby" target="_blank">DeepLink测试!(nearby),附近的直播</a>
+<br>
+<a href="kitty://com.kitty/category?category_id=13" target="_blank">DeepLink测试!(category),分类直播</a>
 <br>
 <b>===========================</b>
 <br>
@@ -92,6 +106,8 @@ function postMessage(message){
 <br>
 <a href="kitty://com.kitty/pay?type=5" target="_blank">DeepLink测试!(UniPin)</a>
 <br>
+<a href="kitty://com.kitty/pay?type=6" target="_blank">DeepLink测试!(MOLHQ)</a>
+<br>
 <a href="kitty://com.kitty/pay?type=11" target="_blank">DeepLink测试!(BluePay_ATM)</a>
 <br>
 <a href="kitty://com.kitty/pay?type=12" target="_blank">DeepLink测试!(BluePay_SMS)</a>
@@ -115,5 +131,7 @@ function postMessage(message){
 <b>===========================</b>
 <br>
 <a href="market://details?id=com.kitty.android" target="_blank">market</a>
+<br>
+<a href="kitty://com.kitty.face/other" target="_blank">kitty_face</a>
 </body>
 </html>
