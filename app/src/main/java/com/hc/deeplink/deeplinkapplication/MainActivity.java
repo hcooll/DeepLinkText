@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String jsStr = "javascript:getAndroidShareContent()";
+                String jsStr = "javascript:refreshEnable()";
 
                 mWebView.loadUrl(jsStr);
 
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     public void loadHtml() {
 //        WebView webview = new WebView(this);
 //        webview.setWebViewClient(new WebViewClient());
-        mWebView.setWebChromeClient(new WebChromeClient(){
+        mWebView.setWebChromeClient(new WebChromeClient() {
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress);
@@ -110,12 +110,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @JavascriptInterface
-    public void share(String message, String message2,String message3,String message4) {
-        Toast.makeText(this," 1: "+ message + " 2: " + message2 + " 3: " + message3+ " 4: " + message4, Toast.LENGTH_SHORT).show();
+    public void share(String message, String message2, String message3, String message4) {
+        Toast.makeText(this, " 1: " + message + " 2: " + message2 + " 3: " + message3 + " 4: " + message4, Toast.LENGTH_SHORT).show();
     }
 
     @JavascriptInterface
     public void postMessage(String message) {
         Toast.makeText(this, "postMessage-->>" + message, Toast.LENGTH_SHORT).show();
+    }
+
+    @JavascriptInterface
+    public void refreshEnable(boolean enable) {
+        Toast.makeText(this, "refreshEnable-->>" + enable, Toast.LENGTH_SHORT).show();
     }
 }

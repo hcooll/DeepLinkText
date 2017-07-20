@@ -93,6 +93,12 @@
         }
 
 
+
+
+
+
+
+
     </style>
     <script>
         function setRemFontSize(baseSize, baseWidth) {
@@ -105,6 +111,12 @@
         window.addEventListener("resize", function() {
             setRemFontSize();
         });
+
+
+
+
+
+
 
 
     </script>
@@ -154,6 +166,10 @@
         　　window.android.share(shareUrl,imageUrl,shareTitle,shareDescription)
         }
 
+        function isPopupShow() {
+            window.android.isPopLayerShow(true)
+        }
+
 
         angular.module("myApp", [])
             .controller("myCtrl", function($scope, $http) {
@@ -170,7 +186,18 @@
             })
 
 
+
+
+
+
+
+
 </script>
+
+<a style="display:inline-block;width:55px; height:80px; position:relative; top:10px; left:48px; "
+   title="Share on Facebook" target="_blank"
+   onclick="javascript:window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent('https://www.baidu.com')+'&t='+encodeURIComponent(document.title), 'newWindow', 'width=800, height=400','center');void(0);"
+/>
 </body>
 
 </html>
